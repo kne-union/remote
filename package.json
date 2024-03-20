@@ -1,7 +1,7 @@
 {
   "name": "@kne-template/remote",
   "version": "0.1.0",
-  "description": "使用@kne/npm-tools初始化一个远程组件库",
+  "description": "使用@kne/npm-tools初始化一个远程组件库.",
   "scripts": {
     "init": "husky",
     "build:md": "npx @kne/md-doc",
