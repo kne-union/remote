@@ -1,16 +1,15 @@
-import { ajax } from "./preset";
 import React from "react";
+import {globalInit} from './preset';
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const themeToken = {
-  colorPrimary: "#4F185A",
+const renderRoot = async App => {
+    const globalPreset = await globalInit();
+    root.render(<React.StrictMode>
+        <App themeToken={globalPreset.themeToken} globalPreset={globalPreset}/>
+    </React.StrictMode>);
 };
 
-root.render(
-    <React.StrictMode>
-      <App preset={{ ajax }} themeToken={themeToken} />
-    </React.StrictMode>
-);
+renderRoot(App);
